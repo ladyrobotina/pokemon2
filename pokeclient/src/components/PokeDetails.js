@@ -6,7 +6,7 @@ import { NavBar } from './NavBar'
 export const PokeDetails = ()=>{
 
     const pokemon = useSelector(state=>state.pokemonReducer.pokemon)
-    console.log(pokemon)
+   
     return (
         <div>
             <NavBar/>

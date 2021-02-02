@@ -8,10 +8,10 @@ export const ListPokemons = ({results})=>{
             <div className='row'>
             {
                 results && results.map((pokemon,index)=>{
-                    let pokeIndex = index + 1
+                    let pokeIndex = pokemon.url.split('/')[pokemon.url.split('/').length - 2]
                     
                     let img = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokeIndex}.png?raw=true`
-                    console.log(img)
+                    
                     return(
                         <PokeCard name={pokemon.name} img={img} pokeIndex={pokeIndex}/>
                     ) 
