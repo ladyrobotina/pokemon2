@@ -1,10 +1,11 @@
-import { GET_LIST_POKEMONS, GET_POKEMON, NEXT_PAGE, PREVIUS_PAGE } from '../actions/actions'
+import {   GET_LIST_POKEMONS, GET_POKEMON, NEXT_PAGE, PREVIUS_PAGE } from '../actions/actions'
 
 const initialState ={
     listPokemons: [],
     pokemon:{},
     offset: 0,
-    limit:20
+    limit:20,
+    
 }
 
 export const pokemonReducer = (state=initialState,actions)=>{
@@ -30,6 +31,7 @@ export const pokemonReducer = (state=initialState,actions)=>{
                 ...state,
                 offset: state.offset > 0 ? state.offset - actions.payload : 0
             }
+        
         default:
             return{
                 state

@@ -6,7 +6,7 @@ export const Home = ()=>{
 
     
     return(
-        <div>
+        <div className='container-fluid'>
            <NavBar/>
            
         </div>

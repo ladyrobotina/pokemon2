@@ -1,9 +1,13 @@
 import axios from 'axios'
 
+
 export const GET_LIST_POKEMONS = 'GET_LIST_POKEMONS'
 export const GET_POKEMON = 'GET_POKEMON'
 export const NEXT_PAGE = 'NEXT_PAGE'
 export const PREVIUS_PAGE = 'PREVIUS_PAGE'
+
+
+
 
 export const getListPokemons = (offset)=>{
     return (dispatch)=>{
@@ -49,3 +53,4 @@ export const previusPage = (limit)=>{
         payload: limit
     }
 }
+

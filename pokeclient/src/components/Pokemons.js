@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getListPokemons } from '../redux/actions/actions'
 import { ListPokemons } from './ListPokemons'
@@ -11,7 +11,7 @@ export const Pokemons = ()=>{
     const dispatch = useDispatch()
     const results = useSelector(state=>state.pokemonReducer)
     const offset = useSelector(state=>state.pokemonReducer.offset)
-    const limit = useSelector(state=>state.pokemonReducer.limit)
+    
    
 
 
@@ -20,7 +20,7 @@ export const Pokemons = ()=>{
     },[dispatch,offset])
     
     return(
-        <div>
+        <div className='container-fluid'>
             <NavBar/>
             <ListPokemons results={results.listPokemons}/>
             <Pagination />
