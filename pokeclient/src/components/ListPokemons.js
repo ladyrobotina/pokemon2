@@ -13,7 +13,7 @@ export const ListPokemons = ({results})=>{
                     let img = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokeIndex}.png?raw=true`
                     
                     return(
-                        <PokeCard name={pokemon.name} img={img} pokeIndex={pokeIndex}/>
+                        <PokeCard name={pokemon.name} img={img} key={pokeIndex}/>
                     ) 
                 })
             }

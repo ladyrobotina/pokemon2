@@ -8,7 +8,7 @@ export const Pagination = ()=>{
     const dispatch = useDispatch()
 
     return(
-        <div class="container">
+        <div className="container">
            <nav aria-label="...">
               <ul className="pagination">
                  { offset === 0 ?

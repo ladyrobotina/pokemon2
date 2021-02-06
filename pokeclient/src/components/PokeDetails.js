@@ -1,36 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
-
 import { NavBar } from './NavBar'
 
 
 export const PokeDetails = ()=>{
     
-    const [cache,setCache] = useState([])
     const pokemon = useSelector(state=>state.pokemonReducer.pokemon)
-    
-    
-    
-
-    useEffect(()=>{
-       let data = localStorage.getItem('dataCachePokemon')
-       if(data){
-          let arr = JSON.parse(data)
-          if(arr.length < 5){
-             setCache([...arr,pokemon])
-          }else{
-             arr.shift()
-             setCache([...arr,pokemon])
-          }
-       }else{
-          setCache([...cache,pokemon])
-       }
-    },[pokemon])
-
-    useEffect(()=>{
-       localStorage.setItem('dataCachePokemon',JSON.stringify(cache))
-    },[cache])
-    console.log(cache)
+     
     return (
         <div>
             <NavBar/>

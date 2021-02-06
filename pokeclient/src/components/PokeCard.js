@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { getPokemon } from '../redux/actions/actions'
 
-export const PokeCard = ({name,img,pokeIndex})=>{
+export const PokeCard = ({name,img})=>{
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -13,7 +13,7 @@ export const PokeCard = ({name,img,pokeIndex})=>{
         history.push(`/details/${name}`)
     }
     return(
-        <div className='col-3 Row' key={pokeIndex}>
+        <div className='col-3 Row'>
             <div className="card" >
                 <img className="card-img-top" src={img} alt={name}/>
                 <div className="card-body">
