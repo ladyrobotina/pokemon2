@@ -7,11 +7,7 @@ const addDataCache = (data)=>{
     arr = [...JSON.parse(getStorage),data]
    }
 
-   localStorage.setItem(key,JSON.stringify(data))
+   localStorage.setItem('pokeCache',JSON.stringify(arr))
 }
 
-const setData = (key,data)=>{
-    localStorage.setItem(key,JSON.stringify(data))
-}
-
-module.exports = addDataCache
+module.exports ={ addDataCache: addDataCache}

@@ -1,4 +1,8 @@
-export const getData = (getStorage,arr,data)=>{
+export const getData = (data)=>{
+
+    let arr = []
+    let getStorage = localStorage.getItem('pokeDataCache')
+   
    if(!getStorage){
        arr = [...arr,data]
        return arr

@@ -11,10 +11,11 @@ router.get('/', (req,res)=>{
     .catch(err=>console.log(err))
 })
 
-router.get('/:query', (req,res)=>{
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${req.params.query}`)
+router.get('/:name', (req,res)=>{
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${req.params.name}`)
     .then(response=>{
-        res.json(response.data)
+    
+        res.send(response.data)
     })
     .catch(err=>console.log(err))
 })
