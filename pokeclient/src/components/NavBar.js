@@ -4,20 +4,25 @@ import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { getPokemon } from '../redux/actions/actions'
 
+
+
 export const NavBar = ()=>{
+
   const [query,setQuery] = useState('')
   const dispatch = useDispatch()
   const history = useHistory()
-
+  
   const handleInputChange = (e)=>{
     setQuery(e.target.value)
   }
-
+  
   const handleSubmit = (e,q)=>{
     e.preventDefault()
     dispatch(getPokemon(q))
     history.push(`/details/${q}`)
   }
+
+  
     return (
         <nav className="navbar navbar-expand-lg navbar-white bg-dark">
   

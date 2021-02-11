@@ -1,18 +1,21 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+
 import { NavBar } from './NavBar'
 
 
 export const PokeDetails = ()=>{
     
+    
     const pokemon = useSelector(state=>state.pokemonReducer.pokemon)
-     
+    
+    
     return (
         <div>
             <NavBar/>
         <div className='container'>
             
-            {pokemon && <di className='row'>
+            {pokemon && <div className='row'>
                 <div className='col-12'>
                    <div className="card mt-5" style={{maxWidth:'100%'}} >
                       <div className='row no-gutters'>
@@ -30,7 +33,7 @@ export const PokeDetails = ()=>{
                       </div>
                    </div>
                 </div>
-            </di> }
+            </div> }
         </div>
         </div>
         
