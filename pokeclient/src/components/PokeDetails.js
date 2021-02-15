@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { getPokemon } from '../redux/actions/actions'
@@ -13,6 +13,8 @@ export const PokeDetails = ()=>{
     const dispatch = useDispatch()
     const { name } = useParams()
     const pokemon = useSelector(state=>state.pokemonReducer.pokemon)
+    const [cache, setCache ] = useState([])
+    
     
     useEffect(()=>{
        if(pokemon === undefined){
