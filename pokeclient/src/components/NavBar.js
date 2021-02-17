@@ -25,10 +25,10 @@ export const NavBar = ()=>{
   
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
   </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">

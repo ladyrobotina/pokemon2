@@ -1,22 +1,19 @@
-import {   GET_CACHE, GET_LIST_POKEMONS, GET_POKEMON, NEXT_PAGE, PREVIUS_PAGE } from '../actions/actions'
+import {   GET_LIST_POKEMONS, GET_POKEMON, NEXT_PAGE, PREVIUS_PAGE } from '../actions/actions'
 
 const initialState ={
     listPokemons: [],
     pokemon:{},
     offset: 0,
     limit:20,
-    listCachePokemons: []
+    listCachePokemons: [],
+    error: ''
     
 }
 
 export const pokemonReducer = (state=initialState,actions)=>{
-
+    
     switch(actions.type){
-        case GET_CACHE:
-            return{
-                ...state,
-                listCachePokemons: actions.payload
-            }        
+               
         case GET_LIST_POKEMONS:
             return{
                 ...state,
@@ -44,3 +41,4 @@ export const pokemonReducer = (state=initialState,actions)=>{
             }
     }
 }
+
