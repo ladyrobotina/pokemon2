@@ -1,4 +1,4 @@
-import {   GET_LIST_POKEMONS, GET_POKEMON, NEXT_PAGE, PREVIUS_PAGE } from '../actions/actions'
+import {   DETAILS_POKEMON, GET_LIST_POKEMONS, NEXT_PAGE, PREVIUS_PAGE, SEARCH_POKEMON } from '../actions/actions'
 
 const initialState ={
     listPokemons: [],
@@ -19,7 +19,12 @@ export const pokemonReducer = (state=initialState,actions)=>{
                 ...state,
                 listPokemons: actions.payload
             }
-        case GET_POKEMON:
+        case SEARCH_POKEMON:
+            return{
+                ...state,
+                pokemon: actions.payload
+            }
+        case DETAILS_POKEMON:
             return{
                 ...state,
                 pokemon: actions.payload

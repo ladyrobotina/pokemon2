@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
-import { getPokemon } from '../redux/actions/actions'
+import { detailsPokemon } from '../redux/actions/actions'
 
 
 
@@ -18,7 +18,7 @@ export const NavBar = ()=>{
   
   const handleSubmit = (e,q)=>{
     e.preventDefault()
-    dispatch(getPokemon(q))
+    dispatch(detailsPokemon(q))
     history.push(`/details/${q}`)
   }
 

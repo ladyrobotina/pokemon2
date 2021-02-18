@@ -1,14 +1,14 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
-import { getPokemon } from '../redux/actions/actions'
+import { detailsPokemon } from '../redux/actions/actions'
 
 export const PokeCard = ({name,img})=>{
 
     const dispatch = useDispatch()
     const history = useHistory()
     const handelClick = (e,name)=>{
-        dispatch(getPokemon(name))
+        dispatch(detailsPokemon(name))
         e.preventDefault()
         history.push(`/details/${name}`)
     }
