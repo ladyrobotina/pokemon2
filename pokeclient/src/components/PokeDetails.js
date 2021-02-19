@@ -1,27 +1,12 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
-import { detailsPokemon } from '../redux/actions/actions'
+import React from 'react'
 
 
 import { NavBar } from './NavBar'
 
 
-export const PokeDetails = ()=>{
+export const PokeDetails = ({pokemon})=>{
    
-   const { name } = useParams()
-   const dispatch = useDispatch()
-   const pokemon = useSelector(state=>state.pokemonReducer.pokemon)
-   
-   
-   
-   useEffect(()=>{
-      if(pokemon === undefined){
-         dispatch(detailsPokemon(name))
-      
-      }
-   },[dispatch,name,pokemon])
-   
+    
    
    
    return (
