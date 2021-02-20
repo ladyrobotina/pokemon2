@@ -1,4 +1,4 @@
-import {   DETAILS_POKEMON, GET_LIST_POKEMONS, NEXT_PAGE, PREVIUS_PAGE, SEARCH_POKEMON } from '../actions/actions'
+import {   ADD_CACHE, DELETE_DATA_CACHE, DETAILS_POKEMON, GET_LIST_POKEMONS, NEXT_PAGE, PREVIUS_PAGE, SEARCH_POKEMON } from '../actions/actions'
 
 const initialState ={
     listPokemons: [],
@@ -13,7 +13,17 @@ const initialState ={
 export const pokemonReducer = (state=initialState,actions)=>{
     
     switch(actions.type){
-               
+        
+        case ADD_CACHE:
+            return{
+                ...state,
+                listCachePokemons: actions.payload
+            }
+        case DELETE_DATA_CACHE:
+            return{
+                ...state,
+                listCachePokemons: actions.payload
+            }
         case GET_LIST_POKEMONS:
             return{
                 ...state,

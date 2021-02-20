@@ -1,16 +1,19 @@
-export const getData = (data)=>{
-
-    let arr = []
-    let getStorage = localStorage.getItem('pokeDataCache')
-   
-   if(!getStorage){
-       arr = [...arr,data]
-       return arr
-   }
-   arr = [...JSON.parse(getStorage),data]
-   return arr
+export const loadState = ()=>{
+    try {
+        const data = localStorage.getItem('item')
+        if(data === null){
+            return undefined
+        }
+        return JSON.parse(data)
+    } catch (error) {
+        return undefined
+    }
 }
 
-export const setData = (key,data)=>{
-    localStorage.setItem(key,JSON.stringify(data))
+export const saveState = (state)=>{
+    try {
+        localStorage.setItem('item',JSON.stringify(state))
+    } catch (error) {
+        
+    }
 }

@@ -4,13 +4,16 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import { Routes } from './Routes';
 import { Provider } from 'react-redux'
 import { store } from './redux/store';
+import { DataProvider } from './Context/DataContext';
 
 
 
 function App() {
   return (
     <Provider store={store}>
-      <Routes/>
+      <DataProvider>
+         <Routes/>
+      </DataProvider>
     </Provider>
   );
 }

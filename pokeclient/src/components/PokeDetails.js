@@ -1,14 +1,23 @@
-import React from 'react'
-
-
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addCache, deleteDataCache } from '../redux/actions/actions'
 import { NavBar } from './NavBar'
 
 
 export const PokeDetails = ({pokemon})=>{
-   
-    
-   
-   
+
+   const dispatch = useDispatch()
+   const [message,setMessage] = useState('Add Favorites')
+   const addFavorites = (e)=>{
+      if(e=== true){
+         dispatch(addCache(pokemon))
+         setMessage('Delete Favorites')
+      }else{
+         dispatch(deleteDataCache(pokemon))
+         setMessage('Add Favorites')
+      }
+   }
+
    return (
         <div>
             <NavBar/>
@@ -27,7 +36,8 @@ export const PokeDetails = ({pokemon})=>{
                          <div className='col-6'>
                             <div className="card-body">
                                <h3 className="card-title">{pokemon.name}</h3>                                
-                               
+                               <label>{message}</label>
+                               <input type='checkbox' onChange={(e)=>addFavorites(e.target.checked)}/>      
                             </div>
                          </div>                         
                       </div>
