@@ -30,7 +30,7 @@ export const deleteDataCache = (pokemon)=>{
         saveState(arr)
         
         dispatch({
-            type:ADD_CACHE,
+            type:DELETE_DATA_CACHE,
             payload: arr
         })
     }

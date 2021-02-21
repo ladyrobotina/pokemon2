@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addCache, deleteDataCache } from '../redux/actions/actions'
+import { loadState } from '../scripts/ustils'
 import { NavBar } from './NavBar'
 
 
@@ -8,16 +9,43 @@ export const PokeDetails = ({pokemon})=>{
 
    const dispatch = useDispatch()
    const [message,setMessage] = useState('Add Favorites')
+   const dataCache = loadState()
+   const [checked,setChecked] = useState(false)
+
    const addFavorites = (e)=>{
       if(e=== true){
          dispatch(addCache(pokemon))
          setMessage('Delete Favorites')
+         setChecked(e)
       }else{
          dispatch(deleteDataCache(pokemon))
          setMessage('Add Favorites')
+         setChecked(e)
       }
    }
 
+ useEffect(()=>{
+   if(dataCache.find(d=>d.name===pokemon.name)){
+      setMessage('Delete Favorites')
+   }else{
+      setMessage('Add Favorites')
+   }
+ })
+ const statusCheck = ()=>{
+   if(dataCache.find(d=>d.name===pokemon.name)){
+     
+      return(
+         <input type='checkbox' checked={true} onChange={(e)=>addFavorites(e.target.checked)}/>
+      )
+   }
+   else{
+     
+      return(
+         <input type='checkbox' checked={false} onChange={(e)=>addFavorites(e.target.checked)}/>
+      )
+   }
+  }
+  console.log(dataCache.find(d=>d.name===pokemon.name))
    return (
         <div>
             <NavBar/>
@@ -37,7 +65,7 @@ export const PokeDetails = ({pokemon})=>{
                             <div className="card-body">
                                <h3 className="card-title">{pokemon.name}</h3>                                
                                <label>{message}</label>
-                               <input type='checkbox' onChange={(e)=>addFavorites(e.target.checked)}/>      
+                               {statusCheck()}     
                             </div>
                          </div>                         
                       </div>
