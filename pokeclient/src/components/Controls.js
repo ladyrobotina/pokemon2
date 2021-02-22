@@ -33,13 +33,13 @@ export const Controls = ({ pokemon })=>{
    if(dataCache.find(d=>d.name===pokemon.name)){
      
       return(
-         <input type='checkbox' checked={checked} onChange={(e)=>addFavorites(e.target.checked)}/>
+         <input type='checkbox' checked={true} onChange={(e)=>addFavorites(e.target.checked)}/>
       )
    }
    else{
      
       return(
-         <input type='checkbox' checked={checked} onChange={(e)=>addFavorites(e.target.checked)}/>
+         <input type='checkbox' checked={false} onChange={(e)=>addFavorites(e.target.checked)}/>
       )
    }
   }

@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Controls } from './Controls'
 import { Images } from './Images'
 import { NavBar } from './NavBar'
 
 
 export const PokeDetails = ({pokemon})=>{
-
-   
+  
+   const [img,setImg]= useState('')
+   const changeData = (img)=>{
+      setImg(img)
+   }
+  
    return (
         <div>
         <NavBar/>
@@ -17,7 +21,7 @@ export const PokeDetails = ({pokemon})=>{
                    <div className="card mt-5" style={{maxWidth:'100%'}} >
                       <div className='row no-gutters'>
                          <div className='col-6'>
-                            <img className="card-img-top" src={pokemon.sprites.front_default} alt={pokemon.name}/>
+                            <img className="card-img-top" src={img === '' ? pokemon.sprites.front_default: img} alt={pokemon.name}/>
                             <div className="card-body">
                               <h4 className="card-title">{pokemon.name}</h4>
                             </div>
@@ -31,7 +35,7 @@ export const PokeDetails = ({pokemon})=>{
                       </div>
                    </div>
                 </div>
-                <Images sprites = {pokemon.sprites} name={pokemon.name}/>
+                <Images sprites = {pokemon.sprites} name={pokemon.name} changeData={changeData} key={pokemon.name}/>
             </div> }
         </div>
         
