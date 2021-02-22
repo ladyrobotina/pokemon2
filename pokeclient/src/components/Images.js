@@ -1,15 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 
-export const Images = ({ sprites,name, changeData })=>{
-    let arrImages = Object.values(sprites).filter(s=> typeof s === 'string')
-    console.log(sprites)
+export const Images = ({ sprites, changeData })=>{
+        
     return(
         <div>
             {
-                arrImages.map((img,index)=>{
+                sprites.map((img,index)=>{
                     return(
-                        <Link onClick={()=>changeData(img)}><img src={img} alt={name} /></Link>
+                        <Link onClick={()=>changeData(img.value)}><img src={img.value} alt={img.key} /></Link>
                     )
                 })
             }
