@@ -37,6 +37,9 @@ export const NavBar = ()=>{
       <li className="nav-item">
        <Link to='/pokemons' className="nav-link">Pokemons</Link>
       </li>
+      <li className="nav-item">
+       <Link to='/favorites' className="nav-link">Favorites</Link>
+      </li>
       
     </ul>
     <form className="form-inline my-2 my-lg-0" onSubmit={e=>handleSubmit(e,query)}>

@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import { useDispatch, useSelector } from 'react-redux'
 import { nextPage, previusPage } from '../redux/actions/actions'
 export const Pagination = ()=>{
+    
     const offset = useSelector(state=>state.pokemonReducer.offset)
-    let limit = 20
+    const limit = 20
     const dispatch = useDispatch()
-
+    
     return(
         <div className="container">
            <nav aria-label="...">
               <ul className="pagination">
-                 { offset === 0 ?
+                 { offset === 0  ?
                  <li className="page-item disabled">
                     <Link 
                        className="page-link"

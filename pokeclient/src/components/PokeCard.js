@@ -13,7 +13,7 @@ export const PokeCard = ({name,img})=>{
         history.push(`/details/${name}`)
     }
     return(
-        <div className='col-3 Row'>
+        <div className='col-lg-3 col-md-6 col-sm-12'>
             <div className="card" >
                 <img className="card-img-top" src={img} alt={name}/>
                 <div className="card-body">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { imgPokemon } from '../scripts/ustils'
 import { Controls } from './Controls'
 import { Images } from './Images'
@@ -12,9 +12,17 @@ export const PokeDetails = ({pokemon})=>{
    const changeData = (img)=>{
       setImg(img)
    }
+   const checImg = (img)=>{
+      if(img === '' ){
+         return pokemon.sprites.front_default
+      }else if( img !== '' && !imgPokemon(pokemon).find(i=>i.value === img)){
+         return pokemon.sprites.front_default
+      }else{ 
+         return img
+      }
+   }
    
-   
-  console.log(imgPokemon(pokemon).find(i=>i.value === img))
+  
    return (
         <div>
         <NavBar/>
@@ -25,7 +33,7 @@ export const PokeDetails = ({pokemon})=>{
                    <div className="card mt-5" style={{maxWidth:'100%'}} >
                       <div className='row no-gutters'>
                          <div className='col-6'>
-                            <img className="card-img-top" src={img === '' ? pokemon.sprites.front_default: img !== '' && !imgPokemon(pokemon).find(i=>i.value === img)? pokemon.sprites.front_default: img} alt={pokemon.name}/>
+                            <img className="card-img-top" src={checImg(img)} alt={pokemon.name}/>
                             <div className="card-body">
                               <h4 className="card-title">{pokemon.name}</h4>
                             </div>

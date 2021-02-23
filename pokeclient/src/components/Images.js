@@ -8,7 +8,7 @@ export const Images = ({ sprites, changeData })=>{
             {
                 sprites.map((img,index)=>{
                     return(
-                        <Link onClick={()=>changeData(img.value)}><img src={img.value} alt={img.key} /></Link>
+                        <Link onClick={()=>changeData(img.value)}><img src={img.value} alt={img.key} key={img.key}/></Link>
                     )
                 })
             }

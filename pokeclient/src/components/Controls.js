@@ -33,21 +33,22 @@ export const Controls = ({ pokemon })=>{
    if(dataCache.find(d=>d.name===pokemon.name)){
      
       return(
-         <input type='checkbox' checked={true} onChange={(e)=>addFavorites(e.target.checked)}/>
+         <input type='checkbox' checked={true} className='form-check-input' onChange={(e)=>addFavorites(e.target.checked)}/>
       )
    }
    else{
      
       return(
-         <input type='checkbox' checked={false} onChange={(e)=>addFavorites(e.target.checked)}/>
+         <input type='checkbox' checked={false} className='form-check-input' onChange={(e)=>addFavorites(e.target.checked)}/>
       )
    }
   }
 
     return(
-        <div>
-            <label>{message}</label>
-            {statusCheck()}  
+        <div className='form-check'>
+            
+            {statusCheck()} 
+            <label className='form-check-label'>{message}</label> 
         </div>
     )
 }
