@@ -7,7 +7,8 @@ import { detailsPokemon } from '../redux/actions/actions'
 
 
 export const NavBar = ()=>{
-
+  
+  
   const [query,setQuery] = useState('')
   const dispatch = useDispatch()
   const history = useHistory()
@@ -21,7 +22,7 @@ export const NavBar = ()=>{
     dispatch(detailsPokemon(q))
     history.push(`/details/${q}`)
   }
-
+  
   
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -31,14 +32,14 @@ export const NavBar = ()=>{
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           
     <ul className="navbar-nav mr-auto">
-      <li className="nav-item active">
-      <Link to='/' className="nav-link">Home</Link>
+      <li className='nav-item active' >
+      <Link to='/' className='nav-link'>Home</Link>
       </li>
-      <li className="nav-item">
+      <li className='nav-item' >
        <Link to='/pokemons' className="nav-link">Pokemons</Link>
       </li>
-      <li className="nav-item">
-       <Link to='/favorites' className="nav-link">Favorites</Link>
+      <li className='nav-item' >
+       <Link to='/favorites' className="nav-link" >Favorites</Link>
       </li>
       
     </ul>

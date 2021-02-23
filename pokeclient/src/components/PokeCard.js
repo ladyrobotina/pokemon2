@@ -17,7 +17,7 @@ export const PokeCard = ({name,img})=>{
             <div className="card" >
                 <img className="card-img-top" src={img} alt={name}/>
                 <div className="card-body">
-                    <h4 className="card-title"><Link onClick={(e)=>handelClick(e,name)}>{name}</Link></h4>
+                    <h4 className="card-title"><Link className='btn btn-primary' onClick={(e)=>handelClick(e,name)}>{name}</Link></h4>
                 </div>
             </div>
         </div>

@@ -7,8 +7,10 @@ export const Images = ({ sprites, changeData })=>{
         <div>
             {
                 sprites.map((img,index)=>{
+                    
                     return(
-                        <Link onClick={()=>changeData(img.value)}><img src={img.value} alt={img.key} key={img.key}/></Link>
+                        
+                        <Link onClick={()=>changeData(img.value)} key={img.key}><img src={img.value} alt={img.key} /></Link>
                     )
                 })
             }
