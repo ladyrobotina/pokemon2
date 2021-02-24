@@ -36,12 +36,11 @@ export const PokeDetails = ({pokemon})=>{
                             <img className="card-img-top" src={checImg(img)} alt={pokemon.name}/>
                             <div className="card-body">
                               <h4 className="card-title">{pokemon.name}</h4>
+                              <Controls pokemon={pokemon}/>  
                             </div>
                          </div>
                          <div className='col-6'>
-                            <div className="card-body">
-                               <h3 className="card-title">{pokemon.name}</h3>                                
-                               <Controls pokemon={pokemon}/>   
+                            <div className="card-body"> 
                                <Images sprites = {imgPokemon(pokemon)} changeData={changeData} />
                             </div>
                          </div>                         

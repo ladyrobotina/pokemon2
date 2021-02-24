@@ -16,7 +16,7 @@ export const Favorites = ()=>{
     
     
     return(
-        <div className='container-fluid'>
+        <div >
             <NavBar/>
             <ListFavorites results={results}/>
         </div>

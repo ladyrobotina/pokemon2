@@ -20,7 +20,7 @@ export const Pokemons = ()=>{
     },[dispatch,offset])
     
     return(
-        <div className='container-fluid'>
+        <div >
             <NavBar/>
             <ListPokemons results={results.listPokemons}/>
             <Pagination />
