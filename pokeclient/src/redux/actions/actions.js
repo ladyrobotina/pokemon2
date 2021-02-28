@@ -4,11 +4,10 @@ import { loadState, saveState } from '../../scripts/ustils'
 
 export const GET_LIST_POKEMONS = 'GET_LIST_POKEMONS'
 export const SEARCH_POKEMON = 'SEARCH_POKEMON'
-export const NEXT_PAGE = 'NEXT_PAGE'
-export const PREVIUS_PAGE = 'PREVIUS_PAGE'
 export const DETAILS_POKEMON = 'DETAILS_POKEMON'
 export const ADD_CACHE = 'ADD_CACHE'
 export const DELETE_DATA_CACHE = 'DELETE_DATA_CACHE'
+
 export const addCache = (pokemon)=>{
 
     return (dispatch)=>{
@@ -24,7 +23,7 @@ export const addCache = (pokemon)=>{
 }
 
 export const deleteDataCache = (pokemon)=>{
-    return (dispatch,getState)=>{
+    return (dispatch)=>{
         const data = loadState()
         let arr = data.filter(d=>d.name !== pokemon.name)
         saveState(arr)
@@ -37,8 +36,10 @@ export const deleteDataCache = (pokemon)=>{
 }
 export const getListPokemons = (offset)=>{
     return (dispatch)=>{
+        
         axios.get(`http://localhost:3001/pokemons?offset=${offset}&limit=20`)
         .then(response=>{
+            
             dispatch({
                 type: GET_LIST_POKEMONS,
                 payload: response.data
@@ -82,18 +83,5 @@ export const detailsPokemon = (query)=>{
     }
 }
 
-export const nextPage = (limit)=>{
 
-    return {
-        type: NEXT_PAGE,
-        payload: limit
-    }
-}
-export const previusPage = (limit)=>{
-    
-    return {
-        type: PREVIUS_PAGE,
-        payload: limit
-    }
-}
 
