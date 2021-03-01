@@ -10,7 +10,7 @@ export const ListPokemons = ({results})=>{
             <div className='text-center pt-5'>
                 <h1>Pokemons Gallery</h1>
             </div>
-            <div className='row'>
+            <div className='row my-1'>
             {
                results && results.map((pokemon)=>{
                     return(

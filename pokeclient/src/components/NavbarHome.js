@@ -1,28 +1,10 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
-import { detailsPokemon } from '../redux/actions/actions'
 
 
 
-export const NavBar = ()=>{
-  
-  
-  const [query,setQuery] = useState('')
-  const dispatch = useDispatch()
-  const history = useHistory()
-  
-  const handleInputChange = (e)=>{
-    setQuery(e.target.value)
-  }
-  
-  const handleSubmit = (e,q)=>{
-    e.preventDefault()
-    dispatch(detailsPokemon(q))
-    history.push(`/details/${q}`)
-  }
-  
+
+export const NavBarHome = ()=>{  
   
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
@@ -43,12 +25,7 @@ export const NavBar = ()=>{
       </li>
       
     </ul>
-    <form className="form-inline my-2 my-lg-0" onSubmit={e=>handleSubmit(e,query)}>
-      <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={handleInputChange}/>
-      <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">
-        Search
-      </button>
-    </form>
+    
   </div>
          
   

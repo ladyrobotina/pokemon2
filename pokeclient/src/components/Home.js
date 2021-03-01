@@ -1,13 +1,18 @@
 import React from 'react'
+import { InputHome } from './InputHome';
 
-import { NavBar } from './NavBar';
+
+import { NavBarHome } from './NavbarHome';
 
 export const Home = ()=>{
 
     
     return(
         
-           <NavBar/>
+           <div>
+               <NavBarHome/>
+               <InputHome/>
+           </div>
            
         
     )
