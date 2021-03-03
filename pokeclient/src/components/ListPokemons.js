@@ -10,6 +10,7 @@ export const ListPokemons = ({results})=>{
             <div className='text-center pt-5'>
                 <h1>Pokemons Gallery</h1>
             </div>
+            {!results && <span className='font-weight-bold text-success h1 mx-auto mb-3'>Loading</span>}
             <div className='row my-1'>
             {
                results && results.map((pokemon)=>{

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { detailsPokemon } from '../redux/actions/actions'
+import swal from 'sweetalert';
 
 
 
@@ -19,13 +20,18 @@ export const NavBar = ()=>{
   
   const handleSubmit = (e,q)=>{
     e.preventDefault()
-    dispatch(detailsPokemon(q))
-    history.push(`/details/${q}`)
+    if(q === ''){
+      swal('\nYou must enter the name of a Pokemon to perform the search')
+     }else{
+      dispatch(detailsPokemon(q))
+      history.push(`/details/${q}`)
+     }
+     
   }
   
   
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark opacity-4" >
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
