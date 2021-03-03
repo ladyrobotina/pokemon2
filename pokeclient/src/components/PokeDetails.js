@@ -26,8 +26,9 @@ export const PokeDetails = ({pokemon})=>{
    return (
         <div>
         <NavBar/>
+        {!pokemon && <span className='font-weight-bold text-success h1 mx-auto mb-3'>Loading</span>}
         <div className='container'>
-            
+        
             {pokemon && <div className='row'>
                 <div className='col-12'>
                    <div className="card mt-5" style={{maxWidth:'100%'}} >

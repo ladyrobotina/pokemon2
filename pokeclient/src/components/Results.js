@@ -12,7 +12,7 @@ export const Results = ()=>{
        <div>
            
            {pokemon && <PokeDetails pokemon={pokemon}/>}
-           {!pokemon && <Error/>}
+           
            
 
        </div>

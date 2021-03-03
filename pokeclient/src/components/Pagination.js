@@ -8,7 +8,7 @@ export const Pagination = ({ offset,advanceList,backList})=>{
 
     
     return(
-        <div className="container">
+        <div className="container mt-2">
            <nav aria-label="...">
               <ul className="pagination">
                  { offset <= 0  ?
