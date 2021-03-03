@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { detailsPokemon } from '../redux/actions/actions'
+import swal from 'sweetalert';
 
 export const InputHome = ()=>{
 
@@ -14,9 +15,13 @@ export const InputHome = ()=>{
     }
   
     const handleSubmit = (e,q)=>{
-       e.preventDefault()
-       dispatch(detailsPokemon(q))
-       history.push(`/details/${q}`)
+        e.preventDefault()
+       if(q === ''){
+        swal('\nYou must enter the name of a Pokemon to perform the search')
+       }else{
+        dispatch(detailsPokemon(q))
+        history.push(`/details/${q}`)
+       }
     }
     return(
         <div className='mx-auto my-auto d-block container-form'>

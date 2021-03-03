@@ -24,13 +24,7 @@ export const Controls = ({ pokemon })=>{
 
  useEffect(()=>{
 
-   const data = loadState()
-   if (data!=null){
-      if(dataCache.find(d=>d.name===pokemon.name)){
-         setMessage('Delete Favorites')
-      }else{
-         setMessage('Add Favorites')
-      }
+   
 
    if(dataCache && dataCache.find(d=>d.name===pokemon.name)){
       setMessage('Delete Favorites')
@@ -44,10 +38,8 @@ export const Controls = ({ pokemon })=>{
 
  const statusCheck = ()=>{
 
-   const data = loadState()
-   if (data!=null){
-      if(dataCache.find(d=>d.name===pokemon.name)){
-
+   
+   
    if(dataCache && dataCache.find(d=>d.name===pokemon.name)){
 
      
@@ -62,13 +54,7 @@ export const Controls = ({ pokemon })=>{
          )
       }
    }
-   else{
-        
-      return(
-         <input type='checkbox' checked={false} className='form-check-input' onChange={(e)=>addFavorites(e.target.checked)}/>
-      )
-   }
-  }
+   
 
     return(
         <div className='form-check'>

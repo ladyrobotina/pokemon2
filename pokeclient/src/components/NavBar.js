@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { detailsPokemon } from '../redux/actions/actions'
+import swal from 'sweetalert';
 
 
 
@@ -19,8 +20,13 @@ export const NavBar = ()=>{
   
   const handleSubmit = (e,q)=>{
     e.preventDefault()
-    dispatch(detailsPokemon(q))
-    history.push(`/details/${q}`)
+    if(q === ''){
+      swal('\nYou must enter the name of a Pokemon to perform the search')
+     }else{
+      dispatch(detailsPokemon(q))
+      history.push(`/details/${q}`)
+     }
+     
   }
   
   

@@ -6,6 +6,7 @@ import { NavBar } from './NavBar'
 import { Pagination } from './Pagination'
 
 
+
 export const Pokemons = ()=>{
 
     const[ offset,setOffset] = useState(0)
@@ -31,6 +32,7 @@ export const Pokemons = ()=>{
             <NavBar/>
             <ListPokemons results={results.listPokemons}/>
             <Pagination offset={offset} advanceList={advanceList} backList={backList}/>
+            
         </div>
     )
 }

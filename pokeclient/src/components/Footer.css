@@ -2,11 +2,12 @@
     display: flex;
     flex: 0 1 44px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     font-size: 18px;
     color: #9da5b1;
     border-top: 1px solid #c8d2cd;
     width: 100%;
     position: fixed;
     bottom: 0;
+    padding: 10px;
 }
