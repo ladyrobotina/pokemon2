@@ -21,7 +21,7 @@ export const PokeDetails = ({pokemon})=>{
          return img
       }
    }
-   
+   console.log(pokemon)
   
    return (
         <div>

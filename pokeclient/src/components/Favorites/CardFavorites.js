@@ -11,14 +11,14 @@ export const CardFavorites = ({pokemon})=>{
         dispatch(deleteDataCache(pokemon))
         history.push('/favorites')
     }
-   
+    console.log(pokemon.sprites.front_default)
     return(
         <div className='col-lg-3 col-md-6 col-sm-12'>
             <div className="card" >
                 <img className="card-img-top" src={pokemon.sprites.front_default} alt={pokemon.name}/>
                 <div className="card-body">
                     <h4 className="card-title">{pokemon.name}</h4>
-                    <button className='btn btn-danger' onClick={deletePokemon}>
+                    <button className='btn btn-outline-danger' onClick={deletePokemon}>
                         Delete Pokemon
                     </button>
                 </div>
