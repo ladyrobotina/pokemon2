@@ -9,6 +9,7 @@ export const ListFavorites = ({results})=>{
             <div className='text-center pt-5'>
                 <h1>Favorites</h1>
             </div>
+            
             <div className='row'>
             {
                 results && results.map((pokemon)=>{
