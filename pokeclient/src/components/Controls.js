@@ -8,7 +8,7 @@ export const Controls = ({ pokemon })=>{
    const dispatch = useDispatch()
    const [message,setMessage] = useState('Add Favorites')
    const dataCache = loadState()
-   const [checked,setChecked] = useState(false)
+   const [checked, setChecked] = useState(false)
 
    const addFavorites = (e)=>{
       if(e=== true){
@@ -23,21 +23,36 @@ export const Controls = ({ pokemon })=>{
    }
 
  useEffect(()=>{
-   if(dataCache.find(d=>d.name===pokemon.name)){
-      setMessage('Delete Favorites')
-   }else{
-      setMessage('Add Favorites')
+   const data = loadState()
+   if (data!=null){
+      if(dataCache.find(d=>d.name===pokemon.name)){
+         setMessage('Delete Favorites')
+      }else{
+         setMessage('Add Favorites')
+      }
    }
+    
+   
  },[dataCache,pokemon.name])
+
  const statusCheck = ()=>{
-   if(dataCache.find(d=>d.name===pokemon.name)){
+   const data = loadState()
+   if (data!=null){
+      if(dataCache.find(d=>d.name===pokemon.name)){
      
-      return(
-         <input type='checkbox' checked={true} className='form-check-input' onChange={(e)=>addFavorites(e.target.checked)}/>
-      )
+         return(
+            <input type='checkbox' checked={true} className='form-check-input' onChange={(e)=>addFavorites(e.target.checked)}/>
+         )
+      }
+      else{
+        
+         return(
+            <input type='checkbox' checked={false} className='form-check-input' onChange={(e)=>addFavorites(e.target.checked)}/>
+         )
+      }
    }
    else{
-     
+        
       return(
          <input type='checkbox' checked={false} className='form-check-input' onChange={(e)=>addFavorites(e.target.checked)}/>
       )

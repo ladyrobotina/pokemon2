@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 export const Images = ({ sprites, changeData })=>{
         
     return(
-        <div>
+        <div className="images">
             {
                 sprites.map((img,index)=>{
                     

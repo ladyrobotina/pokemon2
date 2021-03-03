@@ -1,4 +1,5 @@
 import React from 'react'
+import { Footer } from './Footer';
 import { InputHome } from './InputHome';
 
 
@@ -9,9 +10,10 @@ export const Home = ()=>{
     
     return(
         
-           <div>
+           <div className="home">
                <NavBarHome/>
                <InputHome/>
+               <Footer />
            </div>
            
         
